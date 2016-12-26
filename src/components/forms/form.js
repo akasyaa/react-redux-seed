@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 const renderInput = field =>
     <div>
@@ -10,16 +11,32 @@ const renderInput = field =>
     </div>
 
 class Form extends Component {
+    onSubmit() {
+
+    }
+
     render() {
+        const { handleSubmit, pristine, submitting } = this.props;
         return(
-            <form className='form-name'>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className='form-name'>
+                <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <Field
+                        name='name'
+                        component={renderInput}
+                        type='text' />
+                </div>
             </form>
         );
     }
+}
+
+function mapStateToProps(state) {
+    return { prop: state.to.map }
 }
 
 Form = reduxForm({
     form: 'form_name'
 })(Form);
 
-export default Form;
+export default Form = connect(null)(Form);
