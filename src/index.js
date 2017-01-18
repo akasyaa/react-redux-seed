@@ -7,7 +7,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './components/app';
 import reducers from './reducers';
 
-import '../style/style.scss';
+import '../assets/style/style.scss';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
