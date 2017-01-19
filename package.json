@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "webpack",
+    "build": "npm run clean && webpack",
     "serve": "webpack-dev-server",
+    "clean": "rimraf build",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -39,6 +40,7 @@
     "mocha": "^3.2.0",
     "node-sass": "^4.1.1",
     "react-addons-test-utils": "^15.4.1",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

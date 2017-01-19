@@ -15,7 +15,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: '[name].js'
+        filename: '[name].[chunkhash].js'
         // ,publicPath: 'build/'
     },
     module: {
@@ -47,7 +47,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('style.css'),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
+            names: ['vendor', 'manifest']
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
