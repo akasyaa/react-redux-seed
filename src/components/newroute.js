@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-export default class App extends Component {
+export default class NewRoute extends Component {
   render() {
     return (
       <div>
-          Hello World!
-          {this.props.children}
+          Placeholder component for new route
       </div>
     );
   }
